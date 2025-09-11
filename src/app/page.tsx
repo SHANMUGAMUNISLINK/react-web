@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SnackbarProvider, useSnackbar } from 'notistack';
+import { alert } from "./components/Alert/Alert";
 
 const style: any = {
   position: 'absolute' as 'absolute',
@@ -40,14 +41,19 @@ const Home = () => {
   };
 
   const handleSubmit = async () => {
-    if (login.username == 'admin' && login.password == 'admin@123') {
+    if (login.username === 'admin' && login.password === 'admin@123') {
+      alert.showSuccessMsg('Admin login successful');
       router.push('/admin/home');
-    } else if (login.username == 'customer' && login.password == 'customer@123') {
+    } else if (login.username === 'customer' && login.password === 'customer@123') {
+      alert.showSuccessMsg('Customer login successful');
       router.push('/customer/home');
     } else if (login.username === 'icms' && login.password === 'icms@123') {
+      alert.showSuccessMsg('ICMS login successful');
       router.push('/icms');
+    } else {
+      alert.showErrorMsg('Invalid username or password');
     }
-  }
+  };
 
 
 
@@ -61,7 +67,7 @@ const Home = () => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '10px',
+            gap: '20px',
             minHeight: '60%',
           }}
         >

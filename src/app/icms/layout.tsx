@@ -24,7 +24,8 @@ const ICMSLayout = ({ children }: { children: React.ReactNode }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 height: '90%',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                backgroundColor: '#4b6a941e'
             }}
         >
             <Box
@@ -33,8 +34,8 @@ const ICMSLayout = ({ children }: { children: React.ReactNode }) => {
                     justifyContent: "flex-start",
                     alignItems: "center",
                     height: '60px',
-                    backgroundColor: "whiteSmoke",
                     boxShadow: "15px solid black",
+                    borderBottom: '2px solid gainsboro',
                     padding: '0 16px',
                     width: '100%',
                 }}
@@ -51,7 +52,6 @@ const ICMSLayout = ({ children }: { children: React.ReactNode }) => {
                 <Box
                     sx={{
                         width: isSideBar ? '5%' : '15%',
-                        backgroundColor: 'Background',
                         padding: '20px',
                         boxShadow: '0 0 1px',
                         height: 'calc(100vh - 90px)',
@@ -103,6 +103,7 @@ const ICMSLayout = ({ children }: { children: React.ReactNode }) => {
                     marginLeft: { xs: 0, sm: isSideBar ? '5%' : '15%' },
                     padding: '0 16px',
                     width: '100%',
+                    flexGrow: 1
                 }}
             >
                 <Typography sx={{
